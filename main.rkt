@@ -2,6 +2,8 @@
 
 (require struct-plus-plus racket/async-channel racket/contract)
 
+(provide (all-defined-out))
+
 (struct++ rx-tx-async-channel ([(to-child  (make-async-channel))  async-channel?]
                                [(to-parent (make-async-channel))  async-channel?]))
 
