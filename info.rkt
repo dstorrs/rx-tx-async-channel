@@ -1,7 +1,8 @@
 #lang info
 (define collection "rx-tx-async-channel")
 (define deps '("base" "struct-plus-plus"))
-(define build-deps '("scribble-lib" "racket-doc" "rackunit-lib" "test-more"))
+(define build-deps '("test-more"  "sandbox-lib" "racket-doc" "scribble-lib"))
+
 (define scribblings '(("scribblings/rx-tx-async-channel.scrbl" ())))
 (define pkg-desc "A struct that packages two async-channels to enable bi-directional communication")
 (define version "1.0")
