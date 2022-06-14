@@ -59,5 +59,14 @@ The two fields are called @racketid[to-child] and @racketid[to-parent] with the 
 
    (async-channel-most-recent-message parent)
    (async-channel-most-recent-message child)
-
 ]
+
+@section{API}
+
+@defproc[(rx-tx-async-channel++ [#:to-child async-channel? (make-async-channel)]  [#:to-parent async-channel (make-async-channel)]) rx-tx-async-channel?]{Keyword constructor.}
+
+@defproc[(rx-tx-async-channel.to-child [rtc rx-tx-async-channel?]) async-channel?]{Dotted accessor created by @racketmodname[struct-plus-plus].}
+
+@defproc[(rx-tx-async-channel.to-parent [rtc rx-tx-async-channel?]) async-channel?]{Dotted accessor created by @racketmodname[struct-plus-plus].}
+
+@defproc[(async-channel-most-recent-message [ch async-channel?]) any/c]{Read from the async channel.  If no messages are available, return #f.  Otherwise, read repeatedly until no messages remain, then return the last message.}
